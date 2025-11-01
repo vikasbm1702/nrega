@@ -1,0 +1,41 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: MGNREGA Performance Dashboard
+      - generic [ref=e6]:
+        - link "Project Description" [ref=e7] [cursor=pointer]:
+          - /url: /projects
+          - text: Project Description
+        - link "Official Website" [ref=e8] [cursor=pointer]:
+          - /url: https://nrega.nic.in/netnrega/home.aspx
+          - text: Official Website
+        - button "language" [ref=e9] [cursor=pointer]:
+          - img [ref=e10]
+  - generic [ref=e13]:
+    - heading "MGNREGA Performance Dashboard" [level=1] [ref=e14]
+    - generic [ref=e15]:
+      - button [disabled]:
+        - generic:
+          - img
+        - progressbar:
+          - img
+    - generic [ref=e16]:
+      - heading "Select your state" [level=6] [ref=e17]
+      - generic [ref=e20]:
+        - combobox "Search and select state..." [ref=e21]
+        - button "Open" [ref=e23] [cursor=pointer]:
+          - img [ref=e24]
+        - group
+    - generic [ref=e26]:
+      - heading "Select your district" [level=6] [ref=e27]
+      - generic [ref=e30]:
+        - combobox "Search and select district..." [disabled] [ref=e31]
+        - generic [ref=e32]:
+          - button "Open" [disabled]:
+            - img
+        - group
+    - button "View Dashboard" [disabled]
+```
