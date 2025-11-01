@@ -113,7 +113,7 @@ const DistrictSelector = () => {
     const loadStates = async () => {
       setLoadingStates(true);
       try {
-        fetch("http://51.20.75.211:5000/api/districts/states?limit=500&offset=0")
+        const res =fetch("http://51.20.75.211:5000/api/districts/states?limit=500&offset=0")
 
         const response = await res.json();
         // Handle both paginated and non-paginated responses for backward compatibility
@@ -139,7 +139,7 @@ const DistrictSelector = () => {
     const loadDistricts = async () => {
       setLoadingDistricts(true);
       try {
-        const res = await fetch(`http://51.20.75.211:5001/api/districts/states/${encodeURIComponent(state)}/districts?limit=500&offset=0`);
+        const response = await fetch(`http://51.20.75.211:5001/api/districts/states/${encodeURIComponent(state)}/districts?limit=500&offset=0`);
 
         // Handle both paginated and non-paginated responses for backward compatibility
         const list = response.data || response;
