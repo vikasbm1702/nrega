@@ -113,7 +113,8 @@ const DistrictSelector = () => {
     const loadStates = async () => {
       setLoadingStates(true);
       try {
-        const res = await fetch('http://localhost:5001/api/districts/states?limit=500&offset=0');
+        fetch("http://51.20.75.211:5000/api/districts/states?limit=500&offset=0")
+
         const response = await res.json();
         // Handle both paginated and non-paginated responses for backward compatibility
         const list = response.data || response;
@@ -138,8 +139,8 @@ const DistrictSelector = () => {
     const loadDistricts = async () => {
       setLoadingDistricts(true);
       try {
-        const res = await fetch(`http://localhost:5001/api/districts/states/${encodeURIComponent(state)}/districts?limit=500&offset=0`);
-        const response = await res.json();
+        const res = await fetch(`http://51.20.75.211:5001/api/districts/states/${encodeURIComponent(state)}/districts?limit=500&offset=0`);
+
         // Handle both paginated and non-paginated responses for backward compatibility
         const list = response.data || response;
         setDistricts(list || []);
@@ -162,11 +163,12 @@ const DistrictSelector = () => {
             const { latitude, longitude } = position.coords;
             
             // Call backend reverse geocoding endpoint that matches to our database
-            const response = await fetch('http://127.0.0.1:5001/api/districts/reverse-geocode', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ latitude, longitude })
-            });
+            const response = await fetch('http://51.20.75.211:5001/api/districts/reverse-geocode', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ latitude, longitude })
+});
+
 
             if (!response.ok) {
               const errorData = await response.json();
